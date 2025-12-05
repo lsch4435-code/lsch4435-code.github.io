@@ -1,64 +1,95 @@
 ---
-layout: archive
-title: "CV"
 permalink: /cv/
+title: "CV"
+layout: single
 author_profile: true
-redirect_from:
-  - /resume
 ---
 
-{% include base_path %}
+## 1. 학력
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+- **한신대학교 AI소프트웨어학과 (AI Software 전공)**  
+  2025.03 ~ 재학 중
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+---
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+## 2. 기술 스택
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+### 💻 프로그래밍 언어
+- **C**  
+  - 기본 문법, 조건문/반복문, 배열, 함수 등 기초 문법 이해  
+- **Python**  
+  - 기본 자료형과 리스트/딕셔너리 등을 활용한 간단한 스크립트 작성 경험  
+- **JavaScript**  
+  - DOM 조작, 이벤트 처리, 간단한 인터랙션 구현  
+  - 랜덤 메뉴 추천 기능, 버튼/텍스트 동적 변경 등 구현 경험
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+### 🌐 웹 기술
+- **HTML5 / CSS3**  
+  - 정적 웹 페이지 구조 설계  
+  - Flexbox를 활용한 레이아웃 구성  
+  - 간단한 반응형 레이아웃 이해  
+- **Git & GitHub**  
+  - `git add`, `commit`, `push`를 이용한 기본 버전 관리  
+  - GitHub Pages를 활용한 정적 웹사이트 배포 경험  
+- **Jekyll (academicpages)**  
+  - `_config.yml`, `_pages`, `_posts`, `_data` 구조 이해  
+  - 네비게이션, 사이드바, 색상 테마 커스터마이징 경험
+
+### 🎨 기타
+- **p5.js**  
+  - 도형, 색, 애니메이션을 이용한 인터랙티브 미디어 아트 구현  
+- **문서/정리**  
+  - 한글/영문 혼합 블로그 글 작성  
+  - 과제 및 학습 내용을 블로그 형식으로 정리하는 습관
+
+---
+
+## 3. 프로젝트 경험
+
+### 3-1. 개인 포트폴리오 & 블로그 웹사이트
+- **기간:** 2025.11 ~ 2025.12  
+- **역할:** 기획, 디자인, 개발 전부 개인 수행  
+- **내용:**  
+  - academicpages 템플릿 기반 한국어 포트폴리오 사이트 구축  
+  - 홈 / 포트폴리오 / 블로그 / CV 네비게이션 구성  
+  - 블로그 포스트 작성(전공 선택 이유, 첫 학기 후기, p5.js 프로젝트 등)  
+  - 전체 사이트를 핑크 컬러 테마로 커스터마이징
+
+### 3-2. 오늘 뭐 먹지? 메뉴 추천기
+- **기술:** HTML, CSS, JavaScript  
+- **내용:**  
+  - 버튼 클릭 시 배열에 저장된 메뉴 중 하나를 랜덤으로 추천  
+  - 추천 결과를 화면 가운데에 크게 보여주도록 UI 구성  
+  - 다양한 메뉴(한식, 분식, 국물요리, 고기 등)를 직접 리스트업
+
+### 3-3. p5.js 미디어 아트 – 우주처럼 확장되는 가능성
+- **기술:** p5.js  
+- **내용:**  
+  - 노드와 선, 아이콘 등을 이용해 “개발자로서의 성장과 연결”을 시각화  
+  - 거리/속도에 따라 노드 크기와 투명도를 바꾸는 애니메이션 구현  
+  - 마우스 인터랙션으로 화면 분위기 변화
+
+### 3-4. 크리스마스 트리 인터랙티브 장식 페이지
+- **기술:** HTML, CSS, JavaScript, 이미지 편집  
+- **내용:**  
+  - 배경이 투명한 여러 장식 PNG 이미지를 사용해 트리 꾸미기 인터페이스 구성  
+  - 장식을 클릭하거나 올려놓는 느낌을 줄 수 있도록 배치 및 스타일링  
+  - 향후 클릭 시 메시지/글자를 보여주는 기능으로 확장 예정
+
+---
+
+## 4. 관심 분야
+
+- 웹 프론트엔드 개발 (HTML, CSS, JavaScript)
+- 웹과 인공지능을 결합한 서비스 기획 및 구현
+- 인터랙티브 미디어 아트, 시각화
+
+---
+
+## 5. 강점 & 성향
+
+- 📌 **기록형 학습자** – 블로그와 일기 형식으로 공부 과정과 생각을 정리하는 습관  
+- 🧩 **꾸준한 디버깅 경험** – CSS 깨짐·Jekyll 설정 오류 등을 직접 해결해 본 경험  
+- 🤝 **협업 친화적** – 친구들과 과제/프로젝트 내용을 공유하며 함께 문제 해결하는 스타일  
+- 🎨 **디자인 감각에 대한 관심** – 단순히 “돌아가는 코드”를 넘어서,  
+  보는 사람이 편하고 예쁜 인터페이스를 만들고 싶어 함
