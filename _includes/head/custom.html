@@ -13,7 +13,7 @@
      전체 배경 & 기본 글자색
   ============================ */
   body {
-    background: var(--pink-bg);
+    background: var(--pink-bg) !important;
     color: #111827;
   }
 
@@ -27,26 +27,26 @@
   ============================ */
   .masthead,
   .greedy-nav {
-    background: linear-gradient(90deg, var(--pink-main), var(--pink-dark));
-    border-bottom: 3px solid var(--pink-dark);
+    background: linear-gradient(90deg, #ff72b6, #e6458f) !important;
+    border-bottom: 3px solid #e6458f !important;
   }
 
   .greedy-nav .site-title,
   .greedy-nav .site-title a {
-    color: #fff;
+    color: #fff !important;
     font-weight: 700;
     letter-spacing: -0.03em;
   }
 
   .greedy-nav .visible-links a {
-    color: #ffeef6;
+    color: #ffeef6 !important;
     font-weight: 500;
   }
 
   .greedy-nav .visible-links a:hover,
   .greedy-nav .visible-links a:focus,
   .greedy-nav .visible-links .current-menu-item > a {
-    color: #ffffff;
+    color: #ffffff !important;
     text-shadow: 0 0 6px rgba(0,0,0,0.18);
   }
 
@@ -125,19 +125,15 @@
   /* ============================
      메인 컨텐츠 카드 (홈 / 블로그 / 포트폴리오 다 공통)
   ============================ */
-  .layout--single #main,
-  .layout--archive #main,
-  .layout--page #main {
-    background: var(--pink-soft);
+  body.layout--single #main,
+  body.layout--archive #main,
+  body.layout--page #main {
+    background: var(--pink-soft) !important;
   }
 
   .page,
   .page__inner-wrap {
     background: transparent;
-  }
-
-  .page__inner-wrap > *:not(.page__meta):not(.page__lead):not(.page__title) {
-    /* 여백용, 필요 없으면 지워도 됨 */
   }
 
   .page__content,
