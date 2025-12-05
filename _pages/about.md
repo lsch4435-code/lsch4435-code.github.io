@@ -2,6 +2,7 @@
 permalink: /
 title: "이정진의 포트폴리오 & 블로그"
 author_profile: true
+layout: single
 ---
 
 안녕하세요, **AI Software(AISW)** 전공을 공부하고 있는 이정진입니다 👋  
