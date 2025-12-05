@@ -5,31 +5,30 @@
   :root {
     --pink-main: #ff72b6;   /* 기본 포인트 */
     --pink-dark: #e6458f;   /* 호버/강조 */
-    --pink-soft: #ffeaf4;   /* 섹션 배경 */
-    --pink-bg:   #fff5fb;   /* 전체 배경 */
+    --pink-soft: #ffeaf4;   /* 섹션 배경 (연핑크) */
+    --pink-bg:   #fff5fb;   /* 아주 옅은 핑크 */
   }
 
   /* ============================
-     전체 배경 & 기본 글자색
-     (다크모드여도 항상 이 색 유지)
+     기본(라이트) 테마 배경 & 글자색
+     → 왼쪽 끝까지 흰색, 가운데 부분만 핑크
   ============================ */
   html,
   body {
-    background: var(--pink-bg) !important;
+    background: #ffffff;
     color: #111827;
-  }
-
-  html[data-theme="dark"] body,
-  html[data-theme="dark"] body.layout--single #main,
-  html[data-theme="dark"] body.layout--archive #main,
-  html[data-theme="dark"] body.layout--page #main {
-    background: var(--pink-bg) !important;
-    color: #111827 !important;
   }
 
   .initial-content,
   #main {
     background: transparent;
+  }
+
+  /* 메인 영역(홈/포트폴리오/블로그/CV) 핑크 배경 */
+  body.layout--single #main,
+  body.layout--archive #main,
+  body.layout--page #main {
+    background: var(--pink-soft);
   }
 
   /* ============================
@@ -39,6 +38,11 @@
   .greedy-nav {
     background: linear-gradient(90deg, #ff72b6, #e6458f) !important;
     border-bottom: 3px solid #e6458f !important;
+  }
+
+  /* 가운데 흰 배경 없애고 그라데이션 그대로 보이게 */
+  .masthead__inner-wrap {
+    background: transparent !important;
   }
 
   .greedy-nav .site-title,
@@ -61,7 +65,8 @@
   }
 
   /* ============================
-     사이드바(왼쪽 프로필)
+     사이드바(왼쪽 프로필 영역)
+     → 사이드바 전체 + 왼쪽 끝까지 흰색 느낌
   ============================ */
   .sidebar {
     background: #ffffff;
@@ -133,14 +138,9 @@
   }
 
   /* ============================
-     메인 컨텐츠 카드 (홈/블로그/포트폴리오)
+     메인 컨텐츠 카드
+     (홈/블로그/포트폴리오 공통)
   ============================ */
-  body.layout--single #main,
-  body.layout--archive #main,
-  body.layout--page #main {
-    background: var(--pink-soft) !important;
-  }
-
   .page,
   .page__inner-wrap {
     background: transparent;
@@ -155,7 +155,7 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
     padding: 1.6rem 1.8rem;
     margin: 1.5rem auto;
-    max-width: 900px;         /* 가운데 카드처럼 보이게 */
+    max-width: 900px;         /* 가운데 카드처럼 */
     line-height: 1.7;
   }
 
@@ -261,5 +261,43 @@
 
   .page__footer a:hover {
     color: var(--pink-dark);
+  }
+
+  /* ============================
+     ★ 다크 모드 전용 스타일 ★
+     (진짜 어두운 느낌 나게)
+  ============================ */
+  html[data-theme="dark"] body {
+    background: #050816 !important;
+    color: #f9fafb !important;
+  }
+
+  html[data-theme="dark"] body.layout--single #main,
+  html[data-theme="dark"] body.layout--archive #main,
+  html[data-theme="dark"] body.layout--page #main {
+    background: #020617 !important;
+  }
+
+  html[data-theme="dark"] .sidebar {
+    background: #050816 !important;
+    border-right: 1px solid rgba(255, 114, 182, 0.5);
+    box-shadow: 8px 0 25px rgba(0, 0, 0, 0.8);
+  }
+
+  html[data-theme="dark"] .page__content,
+  html[data-theme="dark"] .archive__item,
+  html[data-theme="dark"] .archive__item-teaser {
+    background: #111827 !important;
+    border-color: rgba(255, 114, 182, 0.4);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65);
+  }
+
+  html[data-theme="dark"] .page__footer {
+    background: #020617 !important;
+    border-top-color: #111827;
+  }
+
+  html[data-theme="dark"] .page__footer footer {
+    color: #9ca3af;
   }
 </style>
