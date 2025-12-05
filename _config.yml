@@ -16,17 +16,19 @@ description              : &description "AI Software를 전공하는 이정진�
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
-#               Additional customization can be done by editing /_includes/author-profile.html
-author:
-  # Biographic information
-  avatar           : "profile.png"
-  name             : "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
-  uri              : # URL
-  email            : "none@example.org" 
+#               Additional customization can be done by editing /_includes/author-profile.htmlauthor:
+  avatar           : "profile.png"   # 프로필 사진 파일 이름 (없으면 그대로 두고 나중에 추가해도 됨)
+  name             : "이정진"
+  pronouns         : 
+  bio              : "AI Software를 전공하며 웹 개발과 AI를 공부하고 있습니다."
+  location         : "한국"
+  employer         : "OO대학교 AI소프트웨어학과"
+  uri              : 
+  email            : "본인 이메일 주소" 
+
+  github           : "lsch4435-code"
+  linkedin         : 
+  google_scholar   : 
 
   # Academic websites
   academia         : # URL
