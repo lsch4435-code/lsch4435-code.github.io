@@ -1,12 +1,12 @@
 <style>
   /* ============================
-     공통 핑크 팔레트 변수
+     공통 핑크 팔레트
   ============================ */
   :root {
     --pink-main: #ff72b6;   /* 기본 포인트 */
-    --pink-dark: #e6458f;   /* 호버 / 강조 */
-    --pink-soft: #fff4fa;   /* 박스/섹션 배경 */
-    --pink-bg:   #fff9fd;   /* 전체 배경 */
+    --pink-dark: #e6458f;   /* 호버/강조 */
+    --pink-soft: #ffeaf4;   /* 섹션 배경 */
+    --pink-bg:   #fff5fb;   /* 전체 배경 */
   }
 
   /* ============================
@@ -17,37 +17,37 @@
     color: #111827;
   }
 
-  /* 메인 컨텐츠 영역은 투명하게 두고 카드들로 느낌 주기 */
   .initial-content,
   #main {
     background: transparent;
   }
 
   /* ============================
-     상단 네비게이션(헤더)
+     상단 네비게이션(헤더) - 핑크바
   ============================ */
   .masthead,
   .greedy-nav {
-    background: #111827; /* 너무 핑크하면 답답하니 헤더는 다크톤 */
-    border-bottom: 3px solid var(--pink-main);
+    background: linear-gradient(90deg, var(--pink-main), var(--pink-dark));
+    border-bottom: 3px solid var(--pink-dark);
   }
 
   .greedy-nav .site-title,
   .greedy-nav .site-title a {
-    color: #f9fafb;
+    color: #fff;
     font-weight: 700;
     letter-spacing: -0.03em;
   }
 
   .greedy-nav .visible-links a {
-    color: #e5e7eb;
+    color: #ffeef6;
     font-weight: 500;
   }
 
   .greedy-nav .visible-links a:hover,
   .greedy-nav .visible-links a:focus,
   .greedy-nav .visible-links .current-menu-item > a {
-    color: var(--pink-main);
+    color: #ffffff;
+    text-shadow: 0 0 6px rgba(0,0,0,0.18);
   }
 
   /* ============================
@@ -123,7 +123,53 @@
   }
 
   /* ============================
-     페이지 제목 & 헤딩들
+     메인 컨텐츠 카드 (홈 / 블로그 / 포트폴리오 다 공통)
+  ============================ */
+  .layout--single #main,
+  .layout--archive #main,
+  .layout--page #main {
+    background: var(--pink-soft);
+  }
+
+  .page,
+  .page__inner-wrap {
+    background: transparent;
+  }
+
+  .page__inner-wrap > *:not(.page__meta):not(.page__lead):not(.page__title) {
+    /* 여백용, 필요 없으면 지워도 됨 */
+  }
+
+  .page__content,
+  .archive__item,
+  .archive__item-teaser {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 114, 182, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+    padding: 1.6rem 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .archive__item,
+  .archive__item-teaser {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .archive__item:hover,
+  .archive__item-teaser:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(255, 114, 182, 0.25);
+  }
+
+  .archive__item-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ============================
+     제목 & 헤딩
   ============================ */
   .page__title,
   .archive__title {
@@ -157,47 +203,7 @@
   }
 
   /* ============================
-     블로그/포트폴리오 카드 공통
-  ============================ */
-  .archive,
-  .page__inner-wrap {
-    background: transparent;
-  }
-
-  .archive__item,
-  .archive__item-teaser {
-    background: #ffffff;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 114, 182, 0.18);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
-    padding: 1.35rem 1.6rem;
-    margin-bottom: 1.4rem;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-
-  .archive__item:hover,
-  .archive__item-teaser:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 32px rgba(255, 114, 182, 0.25);
-  }
-
-  .archive__item-title {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-  }
-
-  /* 블로그 목록 페이지 배경을 살짝 핑크톤으로 */
-  body.layout--archive #main {
-    background: var(--pink-soft);
-  }
-
-  body.layout--archive .page__inner-wrap {
-    background: transparent;
-  }
-
-  /* ============================
-     메타 정보(날짜, 태그, 읽기시간)
+     메타 정보 & 태그 뱃지
   ============================ */
   .page__meta,
   .page__meta span {
@@ -215,7 +221,7 @@
   }
 
   /* ============================
-     코드 블록 & 인용구도 살짝 핑크 느낌
+     코드 블록 & 인용구
   ============================ */
   .highlight,
   pre {
