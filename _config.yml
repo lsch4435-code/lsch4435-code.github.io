@@ -43,7 +43,7 @@ plugins:
 # 사이드바 / 작성자 정보
 # -------------------------
 author:
-  avatar   : "profile.png"   # /images 밑에 둘 거면 이름만 쓰면 됨
+  avatar   : "jj-profile.png"   # /images 밑에 둘 거면 이름만 쓰면 됨
   name     : "이정진"
   pronouns : ""
   bio      : "AI Software를 전공하며 웹 개발과 AI를 공부하고 있습니다."
