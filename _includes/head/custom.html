@@ -11,10 +11,20 @@
 
   /* ============================
      전체 배경 & 기본 글자색
+     (다크모드여도 항상 이 색 유지)
   ============================ */
+  html,
   body {
     background: var(--pink-bg) !important;
     color: #111827;
+  }
+
+  html[data-theme="dark"] body,
+  html[data-theme="dark"] body.layout--single #main,
+  html[data-theme="dark"] body.layout--archive #main,
+  html[data-theme="dark"] body.layout--page #main {
+    background: var(--pink-bg) !important;
+    color: #111827 !important;
   }
 
   .initial-content,
@@ -123,7 +133,7 @@
   }
 
   /* ============================
-     메인 컨텐츠 카드 (홈 / 블로그 / 포트폴리오 다 공통)
+     메인 컨텐츠 카드 (홈/블로그/포트폴리오)
   ============================ */
   body.layout--single #main,
   body.layout--archive #main,
@@ -139,12 +149,14 @@
   .page__content,
   .archive__item,
   .archive__item-teaser {
-    background: #ffffff;
+    background: #fffafd;
     border-radius: 18px;
     border: 1px solid rgba(255, 114, 182, 0.2);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
     padding: 1.6rem 1.8rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 900px;         /* 가운데 카드처럼 보이게 */
+    line-height: 1.7;
   }
 
   .archive__item,
