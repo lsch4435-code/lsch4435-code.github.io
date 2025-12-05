@@ -1,17 +1,251 @@
-{% include base_path %}
+<style>
+  /* ============================
+     공통 핑크 팔레트 변수
+  ============================ */
+  :root {
+    --pink-main: #ff72b6;   /* 기본 포인트 */
+    --pink-dark: #e6458f;   /* 호버 / 강조 */
+    --pink-soft: #fff4fa;   /* 박스/섹션 배경 */
+    --pink-bg:   #fff9fd;   /* 전체 배경 */
+  }
 
-<!-- start custom head snippets -->
+  /* ============================
+     전체 배경 & 기본 글자색
+  ============================ */
+  body {
+    background: var(--pink-bg);
+    color: #111827;
+  }
 
-<!-- Support for Academicons -->
-<link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
+  /* 메인 컨텐츠 영역은 투명하게 두고 카드들로 느낌 주기 */
+  .initial-content,
+  #main {
+    background: transparent;
+  }
 
-<!-- favicon from https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_academic-progressive.svg -->
-<link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png"/>
-<link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg"/>
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png" sizes="32x32"/>
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-192x192.png" sizes="192x192"/>
-<link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
-<link rel="icon" href="/images/favicon.ico"/>
-<meta name="theme-color" content="#ffffff"/>
+  /* ============================
+     상단 네비게이션(헤더)
+  ============================ */
+  .masthead,
+  .greedy-nav {
+    background: #111827; /* 너무 핑크하면 답답하니 헤더는 다크톤 */
+    border-bottom: 3px solid var(--pink-main);
+  }
 
-<!-- end custom head snippets -->
+  .greedy-nav .site-title,
+  .greedy-nav .site-title a {
+    color: #f9fafb;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  .greedy-nav .visible-links a {
+    color: #e5e7eb;
+    font-weight: 500;
+  }
+
+  .greedy-nav .visible-links a:hover,
+  .greedy-nav .visible-links a:focus,
+  .greedy-nav .visible-links .current-menu-item > a {
+    color: var(--pink-main);
+  }
+
+  /* ============================
+     사이드바(왼쪽 프로필)
+  ============================ */
+  .sidebar {
+    background: #ffffff;
+    border-right: 1px solid rgba(255, 114, 182, 0.35);
+    box-shadow: 8px 0 25px rgba(255, 114, 182, 0.08);
+  }
+
+  .author__name a {
+    color: var(--pink-dark);
+  }
+
+  .author__name a:hover {
+    color: var(--pink-main);
+  }
+
+  .author__bio {
+    color: #6b7280;
+  }
+
+  .author__urls-wrapper button {
+    border-color: rgba(255, 114, 182, 0.4);
+    color: var(--pink-main);
+  }
+
+  .author__urls-wrapper button:hover {
+    border-color: var(--pink-dark);
+    background: rgba(255, 114, 182, 0.06);
+  }
+
+  .author__urls.social-icons a {
+    color: var(--pink-main);
+  }
+
+  .author__urls.social-icons a:hover {
+    color: var(--pink-dark);
+  }
+
+  /* ============================
+     링크 & 버튼 공통 스타일
+  ============================ */
+  a,
+  .page__content a,
+  .archive__item-title a {
+    color: var(--pink-main);
+  }
+
+  a:hover,
+  a:focus,
+  .page__content a:hover,
+  .archive__item-title a:hover {
+    color: var(--pink-dark);
+  }
+
+  .btn,
+  .btn--primary,
+  .btn--inverse,
+  .page__share a {
+    background-color: var(--pink-main);
+    border-color: var(--pink-main);
+    color: #fff !important;
+  }
+
+  .btn:hover,
+  .btn--primary:hover,
+  .btn--inverse:hover,
+  .page__share a:hover {
+    background-color: var(--pink-dark);
+    border-color: var(--pink-dark);
+  }
+
+  /* ============================
+     페이지 제목 & 헤딩들
+  ============================ */
+  .page__title,
+  .archive__title {
+    position: relative;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+
+  .page__title::after,
+  .archive__title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin-top: 0.4rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--pink-main), var(--pink-dark));
+  }
+
+  .page__content h2,
+  .page__content h3 {
+    color: #111827;
+    position: relative;
+  }
+
+  .page__content h2::before {
+    content: "✿";
+    color: var(--pink-main);
+    margin-right: 0.4rem;
+    font-size: 0.9em;
+  }
+
+  /* ============================
+     블로그/포트폴리오 카드 공통
+  ============================ */
+  .archive,
+  .page__inner-wrap {
+    background: transparent;
+  }
+
+  .archive__item,
+  .archive__item-teaser {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 114, 182, 0.18);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+    padding: 1.35rem 1.6rem;
+    margin-bottom: 1.4rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .archive__item:hover,
+  .archive__item-teaser:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(255, 114, 182, 0.25);
+  }
+
+  .archive__item-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  /* 블로그 목록 페이지 배경을 살짝 핑크톤으로 */
+  body.layout--archive #main {
+    background: var(--pink-soft);
+  }
+
+  body.layout--archive .page__inner-wrap {
+    background: transparent;
+  }
+
+  /* ============================
+     메타 정보(날짜, 태그, 읽기시간)
+  ============================ */
+  .page__meta,
+  .page__meta span {
+    font-size: 0.8rem;
+    color: #6b7280;
+  }
+
+  .page__taxonomy .taxonomy__index a,
+  .page__meta .page__meta-readtime {
+    background: rgba(255, 114, 182, 0.12);
+    color: var(--pink-main);
+    border: 1px solid rgba(255, 114, 182, 0.6);
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  /* ============================
+     코드 블록 & 인용구도 살짝 핑크 느낌
+  ============================ */
+  .highlight,
+  pre {
+    border-radius: 12px;
+    border: 1px solid rgba(255, 114, 182, 0.25);
+    background: #1f2933;
+  }
+
+  blockquote {
+    border-left: 4px solid var(--pink-main);
+    background: rgba(255, 114, 182, 0.05);
+  }
+
+  /* ============================
+     푸터
+  ============================ */
+  .page__footer {
+    border-top: 1px solid rgba(255, 114, 182, 0.3);
+    background: #ffffff;
+  }
+
+  .page__footer footer {
+    color: #6b7280;
+  }
+
+  .page__footer a {
+    color: var(--pink-main);
+  }
+
+  .page__footer a:hover {
+    color: var(--pink-dark);
+  }
+</style>
