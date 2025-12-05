@@ -3,15 +3,14 @@
      공통 핑크 팔레트
   ============================ */
   :root {
-    --pink-main: #ff72b6;   /* 기본 포인트 */
-    --pink-dark: #e6458f;   /* 호버/강조 */
-    --pink-soft: #ffeaf4;   /* 섹션 배경 (연핑크) */
-    --pink-bg:   #fff5fb;   /* 아주 옅은 핑크 */
+    --pink-main: #ff72b6;
+    --pink-dark: #e6458f;
+    --pink-soft: #ffeaf4;
+    --pink-bg:   #fff5fb;
   }
 
   /* ============================
-     기본(라이트) 테마 배경 & 글자색
-     → 왼쪽 끝까지 흰색, 가운데 부분만 핑크
+     기본(라이트) 테마 배경
   ============================ */
   html,
   body {
@@ -24,7 +23,7 @@
     background: transparent;
   }
 
-  /* 메인 영역(홈/포트폴리오/블로그/CV) 핑크 배경 */
+  /* 메인 영역만 연핑크 배경 */
   body.layout--single #main,
   body.layout--archive #main,
   body.layout--page #main {
@@ -32,7 +31,8 @@
   }
 
   /* ============================
-     상단 네비게이션(헤더) - 핑크바
+     상단 네비게이션(헤더) - 라이트 모드
+     → 핑크 그라데이션 + 흰 글씨
   ============================ */
   .masthead,
   .greedy-nav {
@@ -40,14 +40,14 @@
     border-bottom: 3px solid #e6458f !important;
   }
 
-  /* 가운데 흰 배경 없애고 그라데이션 그대로 보이게 */
-  .masthead__inner-wrap {
+  .masthead__inner-wrap,
+  .masthead__menu {
     background: transparent !important;
   }
 
   .greedy-nav .site-title,
   .greedy-nav .site-title a {
-    color: #fff !important;
+    color: #ffffff !important;
     font-weight: 700;
     letter-spacing: -0.03em;
   }
@@ -66,7 +66,6 @@
 
   /* ============================
      사이드바(왼쪽 프로필 영역)
-     → 사이드바 전체 + 왼쪽 끝까지 흰색 느낌
   ============================ */
   .sidebar {
     background: #ffffff;
@@ -105,7 +104,7 @@
   }
 
   /* ============================
-     링크 & 버튼 공통 스타일
+     링크 & 버튼 공통
   ============================ */
   a,
   .page__content a,
@@ -139,7 +138,6 @@
 
   /* ============================
      메인 컨텐츠 카드
-     (홈/블로그/포트폴리오 공통)
   ============================ */
   .page,
   .page__inner-wrap {
@@ -155,7 +153,7 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
     padding: 1.6rem 1.8rem;
     margin: 1.5rem auto;
-    max-width: 900px;         /* 가운데 카드처럼 */
+    max-width: 900px;
     line-height: 1.7;
   }
 
@@ -211,7 +209,7 @@
   }
 
   /* ============================
-     메타 정보 & 태그 뱃지
+     메타 정보 & 태그
   ============================ */
   .page__meta,
   .page__meta span {
@@ -265,8 +263,8 @@
 
   /* ============================
      ★ 다크 모드 전용 스타일 ★
-     (진짜 어두운 느낌 나게)
   ============================ */
+  html[data-theme="dark"],
   html[data-theme="dark"] body {
     background: #050816 !important;
     color: #f9fafb !important;
@@ -278,6 +276,29 @@
     background: #020617 !important;
   }
 
+  /* 상단바는 다크모드에서도 핑크 유지, 글자만 검정 */
+  html[data-theme="dark"] .masthead,
+  html[data-theme="dark"] .greedy-nav,
+  html[data-theme="dark"] .masthead__inner-wrap,
+  html[data-theme="dark"] .masthead__menu {
+    background: linear-gradient(90deg, #ff72b6, #e6458f) !important;
+    border-bottom: 3px solid #e6458f !important;
+  }
+
+  html[data-theme="dark"] .greedy-nav .site-title,
+  html[data-theme="dark"] .greedy-nav .site-title a,
+  html[data-theme="dark"] .greedy-nav .visible-links a {
+    color: #111111 !important;  /* 검정 글씨 */
+    text-shadow: none !important;
+  }
+
+  html[data-theme="dark"] .greedy-nav .visible-links a:hover,
+  html[data-theme="dark"] .greedy-nav .visible-links a:focus,
+  html[data-theme="dark"] .greedy-nav .visible-links .current-menu-item > a {
+    color: #000000 !important;
+  }
+
+  /* 다크 모드용 사이드바 & 카드 & 푸터 */
   html[data-theme="dark"] .sidebar {
     background: #050816 !important;
     border-right: 1px solid rgba(255, 114, 182, 0.5);
@@ -293,7 +314,7 @@
   }
 
   html[data-theme="dark"] .page__footer {
-    background: #020617 !important;
+    background: #050816 !important;
     border-top-color: #111827;
   }
 
