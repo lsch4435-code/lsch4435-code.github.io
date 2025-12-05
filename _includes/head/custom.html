@@ -321,4 +321,57 @@
   html[data-theme="dark"] .page__footer footer {
     color: #9ca3af;
   }
+
+    /* ===== 최종 강제 오버라이드 =====
+     상단바(제목 + 메뉴)는 항상 같은 핑크 배경,
+     안쪽 요소들은 전부 배경 투명 처리
+  ================================== */
+
+  /* 헤더 전체 배경을 핑크 그라데이션으로 고정 */
+  .masthead,
+  html[data-theme="dark"] .masthead {
+    background: linear-gradient(90deg, #ff72b6, #e6458f) !important;
+    border-bottom: 3px solid #e6458f !important;
+  }
+
+  /* 헤더 안쪽에 덮여 있는 검정/흰 박스들 배경 제거 */
+  .masthead__inner-wrap,
+  .masthead__menu,
+  .greedy-nav,
+  .greedy-nav .site-title,
+  .greedy-nav .visible-links,
+  .greedy-nav .visible-links li,
+  .greedy-nav a {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* 라이트 모드: 글자 흰색 */
+  .greedy-nav .site-title,
+  .greedy-nav .site-title a,
+  .greedy-nav .visible-links a {
+    color: #ffffff !important;
+  }
+
+  .greedy-nav .visible-links a:hover,
+  .greedy-nav .visible-links a:focus,
+  .greedy-nav .visible-links .current-menu-item > a {
+    color: #ffffff !important;
+    text-shadow: 0 0 6px rgba(0,0,0,0.18);
+  }
+
+  /* 다크 모드: 글자 검정 */
+  html[data-theme="dark"] .greedy-nav .site-title,
+  html[data-theme="dark"] .greedy-nav .site-title a,
+  html[data-theme="dark"] .greedy-nav .visible-links a {
+    color: #000000 !important;
+    text-shadow: none !important;
+  }
+
+  html[data-theme="dark"] .greedy-nav .visible-links a:hover,
+  html[data-theme="dark"] .greedy-nav .visible-links a:focus,
+  html[data-theme="dark"] .greedy-nav .visible-links .current-menu-item > a {
+    color: #000000 !important;
+  }
+
 </style>
